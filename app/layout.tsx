@@ -3,9 +3,9 @@ import "@fontsource-variable/space-grotesk";
 import "./globals.css";
 
 export const metadata = {
-  title: "Muhammad Fahad Khan | Senior Software Engineer",
+  title: "Muhammad Fahad Khan | Principal Software Engineer",
   description:
-    "Senior software engineer building modern web and mobile products with JavaScript, TypeScript, React, Next.js, React Native, and Node.js.",
+    "Muhammad Fahad Khan is a principal software engineer building high-performance web and mobile products, open to remote work and relocation worldwide.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

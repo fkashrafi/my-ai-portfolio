@@ -91,8 +91,7 @@ npm run start
 ├── components/
 │   └── DigitalTwinChat.tsx     # Interactive AI chat interface
 ├── public/
-│   └── resume.pdf              # Publicly downloadable résumé
-├── Profile.pdf                 # Source profile document
+│   └── Muhammad_Fahad_Khan_Resume.pdf # Publicly downloadable résumé
 ├── eslint.config.mjs
 ├── package.json
 ├── package-lock.json
@@ -132,7 +131,7 @@ flowchart LR
 
 ```json
 {
-  "message": "Fahad is currently a Senior Software Engineer at Nisum."
+  "message": "Fahad is currently a Principal Software Engineer at Nisum."
 }
 ```
 
@@ -148,14 +147,14 @@ Update the visible page content in `app/page.tsx`. Career details used by the AI
 
 ### Résumé
 
-1. Replace `Profile.pdf` with the latest source document if the source is retained in the repository.
-2. Copy the public version to `public/resume.pdf`.
+1. Replace `public/Muhammad_Fahad_Khan_Resume.pdf` with the latest résumé.
+2. Keep the résumé link in `app/page.tsx` synchronized with the filename.
 3. Update the visible career content and the AI career context.
 4. Run the verification commands before publishing.
 
 ### Contact links
 
-Email and LinkedIn links are currently defined in `app/page.tsx`. Update every occurrence when contact information changes.
+Email, WhatsApp, GitHub, and LinkedIn links are currently defined in `app/page.tsx`. Update every occurrence when contact information changes.
 
 ### AI model
 

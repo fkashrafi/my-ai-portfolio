@@ -13,30 +13,39 @@ const MAX_REQUESTS = 10;
 const requestLog = new Map<string, number[]>();
 
 const CAREER_CONTEXT = `
-Muhammad Fahad Khan is a computer science graduate and Senior Software Engineer based in Karachi, Sindh, Pakistan. He has 6+ years of professional experience building web and mobile applications.
+Muhammad Fahad Khan is a Principal Software Engineer based in Karachi, Pakistan, with around 7 years of experience delivering high-performance web and mobile applications. He is open to remote principal roles and relocation opportunities worldwide and is comfortable collaborating across US and EU time zones.
 
-Core skills: JavaScript, TypeScript, React.js, Next.js, React Native, Node.js, MERN, front-end development, mobile development, software development methodologies, multitasking, and code review.
+Core skills:
+- Languages and frameworks: JavaScript ES6+, React.js, React Native, Next.js, Node.js, Vue.js, and Web Components.
+- Frontend: HTML5, CSS3, responsive design, accessibility and WCAG, reusable components, and design patterns.
+- State and data: Redux, GraphQL, REST APIs, and microservices integration.
+- UI libraries: Tailwind CSS, Chakra UI, Ant Design, Material UI, and Bootstrap.
+- Performance: Core Web Vitals, lazy loading, code splitting, and bundle optimization.
+- Testing and tooling: Jest, Mocha, Git, npm, yarn, and webpack.
+- Practices: Agile, Scrum, Kanban, code review, async communication, distributed and remote collaboration, and mentoring.
+- AI-assisted development: GitHub Copilot, Cursor, Claude, ChatGPT, Lovable, v0, prompt-driven scaffolding, and code review.
 
 Career history:
-- Nisum — Senior Software Engineer, April 2023 to present, Karachi.
-- Nisum — Software Engineer, August 2021 to April 2023, Karachi.
-- Cooperative Computing — Software Engineer, November 2020 to August 2021, Karachi.
-- NytroTech — Mobile App Developer, December 2019 to November 2020, Karachi.
-- Third Venture Interactive — Front-end Developer, July 2018 to November 2019, Karachi.
+- Nisum - Principal Software Engineer, August 2021 to present, Karachi. Leads front-end architecture for large-scale US e-commerce platforms including Backcountry and Motosport. Builds reusable accessible WCAG component libraries, improves Core Web Vitals, modernizes AngularJS to React.js and PHP storefronts to a Next.js monorepo, integrates microservices, maintains the Backcountry React Native app, and uses AI-assisted development tools in daily work.
+- Cooperative Computing - Software Engineer, November 2020 to July 2021, Karachi. Migrated Dastgyr from Expo to bare React Native, implemented OTP autofill, built the Degree37 appointment module, and owned unit and functional testing.
+- Batoota / NytroTech - Mobile Application Developer, November 2019 to October 2020, Karachi. Developed Batoota.pk travel-booking features and the front end for a cross-platform VPN mobile app.
+- Third Venture Interactive - React Developer, July 2018 to October 2019, Karachi. Built web and mobile applications with React.js and React Native and collaborated on specifications and testing.
+
+Key projects:
+- QBric AI QA Tool at Nisum - reporting and dashboard UI for an AI test-automation platform using React.js and Next.js.
+- CodeCure AI - micro-SaaS and brand site built with AI-assisted development using Next.js and Lovable.
+- Homesglobe - real-estate e-commerce site with an admin panel using React.js, Ant Design, and Tailwind.
+- Backcountry Imaging Tool - end-to-end AngularJS to React.js migration using React.js, Chakra UI, and Jest.
+- Cloud Cost Optimization Engine, or CCOE - cloud-cost portal with reporting, filtering, and pagination using React.js and Node.js.
 
 Education:
-- Bachelor of Science in Computer Science, Federal Urdu University of Arts, Science and Technology, January 2013 to December 2016.
-- Project Management (Agile / Scrum) course, Udemy, 2020.
-
-Certifications listed on the résumé:
-- Learning Functional Programming with JavaScript ES6+
-- Python for Data Engineering: from Beginner to Advanced
-- Node.js Essential Training
-- Problem Solving (Basic)
+- Bachelor of Science in Computer Science, Federal Urdu University of Arts, Science and Technology, 2012 to 2016, Karachi, Pakistan.
 
 Public contact:
 - Email: mfahadkhanashrafi@outlook.com
-- LinkedIn: linkedin.com/in/fkashrafi
+- GitHub: github.com/fkashrafi
+- LinkedIn: https://www.linkedin.com/in/fkashrafi/
+- WhatsApp: +923432610494
 `.trim();
 
 const SYSTEM_PROMPT = `
