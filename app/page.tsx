@@ -139,13 +139,13 @@ export default function Home() {
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-orbit orbit-one" aria-hidden="true" />
         <div className="hero-orbit orbit-two" aria-hidden="true" />
-        <div className="hero-kicker reveal"><span className="pulse" /> Muhammad Fahad Khan · Principal Software Engineer</div>
+        <div className="hero-kicker reveal"><span className="pulse" /> Muhammad Fahad Khan · Principal Software Engineer & AI Engineer</div>
         <h1 className="hero-title reveal delay-1">
-          <span>Strategy with</span>
-          <span className="accent-line">an edge<span className="title-dot">.</span></span>
+          <span>Engineering</span>
+          <span className="accent-line">with AI<span className="title-dot">.</span></span>
         </h1>
         <div className="hero-bottom reveal delay-2">
-          <p>Principal software engineer building high-performance products. Open to remote opportunities and relocation worldwide.</p>
+          <p>Principal software engineer and AI engineer building AI-assisted products and high-performance platforms. Open to remote opportunities and relocation worldwide.</p>
           <a className="scroll-link" href="#about"><span>Explore profile</span><ArrowDown size={18} /></a>
         </div>
         <div className="hero-index" aria-hidden="true">01 / 05</div>
@@ -166,8 +166,8 @@ export default function Home() {
             <h2>Engineering with intent.<br /><em>Always</em> moving forward.</h2>
           </div>
           <div className="about-copy">
-            <p className="lead">I lead front-end architecture and deliver high-performance web and mobile products for large-scale platforms.</p>
-            <p>My work spans React.js, Next.js, React Native, Node.js, Vue.js, Web Components, GraphQL, and REST APIs. I have modernized legacy AngularJS and PHP platforms, improved Core Web Vitals, built accessible WCAG component systems, and integrated AI-assisted development into daily engineering workflows.</p>
+            <p className="lead">I&apos;m a principal software engineer and AI engineer turning AI capabilities into useful products and faster engineering workflows.</p>
+            <p>My AI work includes the QBric AI QA Tool, CodeCure AI, rapid prototyping, prompt-driven scaffolding, refactoring, and code review with Cursor, GitHub Copilot, Claude, ChatGPT, Lovable, and v0. I pair that AI focus with deep experience in React.js, Next.js, React Native, Node.js, accessibility, performance, and large-scale front-end architecture.</p>
             <a className="text-link" href="/Muhammad_Fahad_Khan_Resume.pdf" target="_blank" rel="noreferrer">View résumé <MoveUpRight size={17} /></a>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           <Wordmark />
-          <p>Muhammad Fahad Khan · Open to remote and relocation opportunities · <a className="contact-number" href="https://wa.me/923432610494" target="_blank" rel="noreferrer">WhatsApp +92 343 2610494</a></p>
+          <p>Muhammad Fahad Khan · Principal Software Engineer & AI Engineer · <a className="contact-number" href="https://wa.me/923432610494" target="_blank" rel="noreferrer">WhatsApp +92 343 2610494</a></p>
           <div className="socials"><a href="mailto:mfahadkhanashrafi@outlook.com" aria-label="Email"><Mail size={18} /></a><a href="https://wa.me/923432610494" target="_blank" rel="noreferrer" aria-label="WhatsApp"><MessageCircle size={18} /></a><a href="https://github.com/fkashrafi" target="_blank" rel="noreferrer" aria-label="GitHub"><Code2 size={18} /></a><a className="linkedin-glyph" href="https://www.linkedin.com/in/fkashrafi/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a></div>
           <span>© {new Date().getFullYear()}</span>
         </div>

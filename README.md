@@ -1,4 +1,4 @@
-# Muhammad Fahad Khan - Executive Portfolio
+# Muhammad Fahad Khan - Principal Software Engineer & AI Engineer Portfolio
 
 A responsive personal portfolio for Muhammad Fahad Khan, built with Next.js and TypeScript. The visual direction combines an editorial, high-contrast identity with Apple-inspired glass surfaces, spring-like micro-interactions, pointer-aware lighting, and restrained motion.
 

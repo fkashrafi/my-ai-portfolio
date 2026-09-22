@@ -156,6 +156,9 @@ em { font-family: Georgia, serif; font-weight: 400; }
 .chat-row.user .message-bubble { background: var(--cream); border-color: var(--cream); color: var(--ink); border-radius: 18px 5px 18px 18px; }
 .message-bubble > span { display: block; color: #797975; font-size: 8px; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 7px; }
 .message-bubble p { white-space: pre-wrap; margin: 0; font-size: 13px; line-height: 1.65; }
+.chat-whatsapp { display: inline-flex; align-items: center; gap: 9px; margin-top: 14px; padding: 10px 13px; border-radius: 999px; background: #25d366; color: #07170d; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; box-shadow: inset 0 1px 0 rgba(255,255,255,.45); transition: transform .4s var(--apple-ease), box-shadow .3s, background .25s; }
+.chat-whatsapp:hover { transform: translateY(-2px); background: #3ee27a; box-shadow: 0 9px 24px rgba(37,211,102,.2), inset 0 1px 0 rgba(255,255,255,.5); }
+.chat-whatsapp:active { transform: scale(.97); }
 .typing p { display: flex; gap: 5px; padding: 6px 0 3px; }
 .typing p i { width: 5px; height: 5px; border-radius: 50%; background: var(--acid); animation: typing 1s infinite alternate; }
 .typing p i:nth-child(2) { animation-delay: .2s; }.typing p i:nth-child(3) { animation-delay: .4s; }

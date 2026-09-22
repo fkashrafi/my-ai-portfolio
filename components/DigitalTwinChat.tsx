@@ -1,12 +1,16 @@
 "use client";
 
-import { ArrowUp, Bot, RotateCcw, Sparkles, UserRound } from "lucide-react";
+import { ArrowUp, Bot, MessageCircle, RotateCcw, Sparkles, UserRound } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
+  contactFahad?: boolean;
 };
+
+const whatsappUrl =
+  "https://wa.me/923432610494?text=Hi%20Fahad%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.";
 
 const starters = [
   "What is Fahad's strongest experience?",
@@ -14,10 +18,17 @@ const starters = [
   "Which technologies does he work with?",
 ];
 
+const featuredAnswers: Record<string, string> = {
+  "what is fahad's strongest experience?":
+    "Fahad's strongest experience is combining AI engineering with production-grade software architecture. His AI work includes the QBric AI QA Tool, where he built the reporting and dashboard experience for an AI test-automation platform, and CodeCure AI, a micro-SaaS and brand platform developed through AI-assisted workflows. He uses Cursor, GitHub Copilot, Claude, ChatGPT, Lovable, and v0 for prototyping, scaffolding, refactoring, and code review, backed by deep experience leading React and Next.js architecture, accessibility, Core Web Vitals, microservices integration, and React Native products.",
+  "walk me through his career journey.":
+    "Today, Fahad works as a Principal Software Engineer and AI Engineer, building AI-focused products such as the QBric AI QA Tool and CodeCure AI while embedding AI-assisted development into everyday engineering. His journey began as a React Developer at Third Venture Interactive in 2018, followed by mobile product work at Batoota / NytroTech and React Native modernization at Cooperative Computing. Since August 2021, he has been at Nisum, where his scope has expanded across AI tooling, front-end architecture, legacy modernization, Core Web Vitals, accessible component systems, microservices, and production React Native applications.",
+};
+
 const welcome: ChatMessage = {
   role: "assistant",
   content:
-    "Hi — I’m Fahad’s AI career twin. Ask me about his experience, skills, career progression, or education.",
+    "Hi — I’m Fahad’s AI career twin. Ask me about his AI projects, AI engineering skills, experience, or career journey.",
 };
 
 export default function DigitalTwinChat() {
@@ -26,10 +37,17 @@ export default function DigitalTwinChat() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const endRef = useRef<HTMLDivElement>(null);
+  const featuredAnswerTimer = useRef<number | null>(null);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }, [messages, loading]);
+
+  useEffect(() => {
+    return () => {
+      if (featuredAnswerTimer.current) window.clearTimeout(featuredAnswerTimer.current);
+    };
+  }, []);
 
   async function sendMessage(text: string) {
     const question = text.trim();
@@ -41,6 +59,19 @@ export default function DigitalTwinChat() {
     setError("");
     setLoading(true);
 
+    const featuredAnswer = featuredAnswers[question.toLowerCase()];
+    if (featuredAnswer) {
+      featuredAnswerTimer.current = window.setTimeout(() => {
+        setMessages((current) => [
+          ...current,
+          { role: "assistant", content: featuredAnswer },
+        ]);
+        setLoading(false);
+        featuredAnswerTimer.current = null;
+      }, 420);
+      return;
+    }
+
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -48,21 +79,38 @@ export default function DigitalTwinChat() {
         body: JSON.stringify({ messages: nextMessages.slice(-8) }),
       });
 
-      const data = (await response.json()) as { message?: string; error?: string };
+      const data = (await response.json()) as {
+        message?: string;
+        error?: string;
+        contactFahad?: boolean;
+      };
       if (!response.ok || !data.message) {
         throw new Error(data.error || "The digital twin is unavailable right now.");
       }
 
       setMessages((current) => [
         ...current,
-        { role: "assistant", content: data.message as string },
+        {
+          role: "assistant",
+          content: data.message as string,
+          contactFahad: data.contactFahad,
+        },
       ]);
     } catch (requestError) {
-      setError(
+      console.error(
         requestError instanceof Error
           ? requestError.message
           : "The digital twin is unavailable right now.",
       );
+      setMessages((current) => [
+        ...current,
+        {
+          role: "assistant",
+          content:
+            "I couldn't retrieve a reliable answer right now. Please connect with Fahad directly on WhatsApp.",
+          contactFahad: true,
+        },
+      ]);
     } finally {
       setLoading(false);
     }
@@ -86,7 +134,14 @@ export default function DigitalTwinChat() {
         <button
           className="reset-chat"
           type="button"
-          onClick={() => { setMessages([welcome]); setError(""); setInput(""); }}
+          onClick={() => {
+            if (featuredAnswerTimer.current) window.clearTimeout(featuredAnswerTimer.current);
+            featuredAnswerTimer.current = null;
+            setMessages([welcome]);
+            setError("");
+            setInput("");
+            setLoading(false);
+          }}
           aria-label="Reset conversation"
         >
           <RotateCcw size={16} /> <span>Reset</span>
@@ -102,6 +157,11 @@ export default function DigitalTwinChat() {
             <div className="message-bubble">
               <span>{message.role === "assistant" ? "Digital twin" : "You"}</span>
               <p>{message.content}</p>
+              {message.contactFahad && (
+                <a className="chat-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer">
+                  <MessageCircle size={16} /> Connect with Fahad on WhatsApp
+                </a>
+              )}
             </div>
           </div>
         ))}
