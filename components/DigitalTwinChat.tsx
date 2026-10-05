@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Bot, MessageCircle, RotateCcw, Sparkles, UserRound } from "lucide-react";
+import { ArrowUp, Bot, Download, MessageCircle, RotateCcw, Sparkles, UserRound } from "lucide-react";
 import { FormEvent, useEffect, useRef, useState } from "react";
 
 type ChatMessage = {
@@ -9,26 +9,30 @@ type ChatMessage = {
   contactFahad?: boolean;
 };
 
+const resumeUrl = "/Muhammad_Fahad_Khan_Resume.pdf";
+
 const whatsappUrl =
   "https://wa.me/923432610494?text=Hi%20Fahad%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.";
 
 const starters = [
   "What is Fahad's strongest experience?",
+  "Is Fahad open to remote roles?",
   "Walk me through his career journey.",
-  "Which technologies does he work with?",
 ];
 
 const featuredAnswers: Record<string, string> = {
   "what is fahad's strongest experience?":
-    "Fahad's strongest experience is combining AI engineering with production-grade software architecture. His AI work includes the QBric AI QA Tool, where he built the reporting and dashboard experience for an AI test-automation platform, and CodeCure AI, a micro-SaaS and brand platform developed through AI-assisted workflows. He uses Cursor, GitHub Copilot, Claude, ChatGPT, Lovable, and v0 for prototyping, scaffolding, refactoring, and code review, backed by deep experience leading React and Next.js architecture, accessibility, Core Web Vitals, microservices integration, and React Native products.",
+    "Fahad's strongest experience is leading frontend architecture for large US e-commerce brands — Williams-Sonoma, Backcountry and MotoSport — at Nisum. He builds reusable, accessible (WCAG) components in a micro-frontend monorepo shared across React, Next.js and Vue, improved Core Web Vitals (LCP, CLS) on web and mobile, and migrated a legacy AngularJS tool to React and a PHP storefront to a Next.js monorepo. He also maintains the Backcountry React Native app and uses AI-assisted development (Cursor, Copilot, Claude, ChatGPT) daily, including on the QBric AI QA Tool and the CodeCure AI medical coding business site.",
+  "is fahad open to remote roles?":
+    "Yes. Fahad is open to fully remote roles worldwide, as well as on-site or hybrid roles in Pakistan. He is comfortable working across US and EU time zones and already works closely with US-based teams day to day.",
   "walk me through his career journey.":
-    "Today, Fahad works as a Principal Software Engineer and AI Engineer, building AI-focused products such as the QBric AI QA Tool and CodeCure AI while embedding AI-assisted development into everyday engineering. His journey began as a React Developer at Third Venture Interactive in 2018, followed by mobile product work at Batoota / NytroTech and React Native modernization at Cooperative Computing. Since August 2021, he has been at Nisum, where his scope has expanded across AI tooling, front-end architecture, legacy modernization, Core Web Vitals, accessible component systems, microservices, and production React Native applications.",
+    "Fahad started as a React Developer at Third Venture Interactive in 2018, building web and mobile apps with React.js and React Native. He moved into mobile at Batoota / NytroTech (2019–2020), then joined Cooperative Computing, where he migrated Dastgyr from Expo to bare React Native. Since August 2021 he has been a Principal Software Engineer at Nisum, leading frontend architecture, performance and modernization work for US e-commerce and healthcare products — 8+ years in total.",
 };
 
 const welcome: ChatMessage = {
   role: "assistant",
   content:
-    "Hi — I’m Fahad’s AI career twin. Ask me about his AI projects, AI engineering skills, experience, or career journey.",
+    "Hi — I'm Fahad's AI assistant. Ask me about his experience, the brands he's built for, his skills, or his availability.",
 };
 
 export default function DigitalTwinChat() {
@@ -36,11 +40,13 @@ export default function DigitalTwinChat() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const endRef = useRef<HTMLDivElement>(null);
+  const windowRef = useRef<HTMLDivElement>(null);
   const featuredAnswerTimer = useRef<number | null>(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    // Scroll only inside the chat box — scrollIntoView would also scroll the page.
+    const chatWindow = windowRef.current;
+    if (chatWindow) chatWindow.scrollTo({ top: chatWindow.scrollHeight, behavior: "smooth" });
   }, [messages, loading]);
 
   useEffect(() => {
@@ -85,7 +91,7 @@ export default function DigitalTwinChat() {
         contactFahad?: boolean;
       };
       if (!response.ok || !data.message) {
-        throw new Error(data.error || "The digital twin is unavailable right now.");
+        throw new Error(data.error || "The AI assistant is unavailable right now.");
       }
 
       setMessages((current) => [
@@ -100,7 +106,7 @@ export default function DigitalTwinChat() {
       console.error(
         requestError instanceof Error
           ? requestError.message
-          : "The digital twin is unavailable right now.",
+          : "The AI assistant is unavailable right now.",
       );
       setMessages((current) => [
         ...current,
@@ -127,8 +133,8 @@ export default function DigitalTwinChat() {
         <div className="twin-identity">
           <span className="twin-avatar"><Bot size={20} /></span>
           <div>
-            <strong>Fahad / AI Twin</strong>
-            <span><i /> Online · résumé grounded</span>
+            <strong>Fahad&apos;s AI Assistant</strong>
+            <span><i /> Online · Resume-grounded</span>
           </div>
         </div>
         <button
@@ -148,19 +154,24 @@ export default function DigitalTwinChat() {
         </button>
       </div>
 
-      <div className="chat-window" aria-live="polite" aria-busy={loading}>
+      <div className="chat-window" ref={windowRef} aria-live="polite" aria-busy={loading}>
         {messages.map((message, index) => (
           <div className={`chat-row ${message.role}`} key={`${message.role}-${index}`}>
             <span className="message-avatar" aria-hidden="true">
               {message.role === "assistant" ? <Sparkles size={15} /> : <UserRound size={15} />}
             </span>
             <div className="message-bubble">
-              <span>{message.role === "assistant" ? "Digital twin" : "You"}</span>
+              <span>{message.role === "assistant" ? "AI Assistant" : "You"}</span>
               <p>{message.content}</p>
               {message.contactFahad && (
-                <a className="chat-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer">
-                  <MessageCircle size={16} /> Connect with Fahad on WhatsApp
-                </a>
+                <div className="chat-actions">
+                  <a className="chat-whatsapp" href={whatsappUrl} target="_blank" rel="noreferrer">
+                    <MessageCircle size={16} /> Connect on WhatsApp
+                  </a>
+                  <a className="chat-resume" href={resumeUrl} download="Muhammad_Fahad_Khan_Resume.pdf">
+                    <Download size={16} /> Download resume
+                  </a>
+                </div>
               )}
             </div>
           </div>
@@ -168,10 +179,9 @@ export default function DigitalTwinChat() {
         {loading && (
           <div className="chat-row assistant">
             <span className="message-avatar"><Sparkles size={15} /></span>
-            <div className="message-bubble typing"><span>Digital twin</span><p><i /><i /><i /></p></div>
+            <div className="message-bubble typing"><span>AI Assistant</span><p><i /><i /><i /></p></div>
           </div>
         )}
-        <div ref={endRef} />
       </div>
 
       {messages.length === 1 && (
@@ -198,7 +208,7 @@ export default function DigitalTwinChat() {
               event.currentTarget.form?.requestSubmit();
             }
           }}
-          placeholder="Ask about experience, skills, or career journey…"
+          placeholder="Ask about experience, skills, or availability…"
           rows={1}
           maxLength={500}
           disabled={loading}
@@ -207,7 +217,7 @@ export default function DigitalTwinChat() {
           <ArrowUp size={19} />
         </button>
       </form>
-      <p className="ai-disclaimer">AI representation · Answers are grounded in the published résumé and may be imperfect.</p>
+      <p className="ai-disclaimer">AI representation · Answers are grounded in the published resume and may be imperfect.</p>
     </div>
   );
 }

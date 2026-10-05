@@ -1,11 +1,10 @@
 import "@fontsource-variable/manrope";
-import "@fontsource-variable/space-grotesk";
 import "./globals.css";
 
 export const metadata = {
-  title: "Muhammad Fahad Khan | Principal Software Engineer & AI Engineer",
+  title: "Muhammad Fahad Khan | Principal Software Engineer",
   description:
-    "Muhammad Fahad Khan is a principal software engineer and AI engineer building AI-assisted products and high-performance web and mobile platforms.",
+    "Principal Software Engineer with 8+ years across React.js, Next.js, React Native and Node.js. Frontend architecture for Williams-Sonoma, Backcountry and MotoSport. Open to remote roles worldwide.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
