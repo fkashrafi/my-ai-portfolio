@@ -49,7 +49,7 @@ const clients = [
 ];
 
 const nisumHighlights = [
-  "Lead frontend architecture in a micro-frontend (MFE) monorepo — reusable, accessible (WCAG) components shared across React, Next.js and Vue apps.",
+  "Contribute to frontend architecture in a micro-frontend (MFE) monorepo — reusable, accessible (WCAG) components shared across React, Next.js and Vue apps.",
   "Improved load time and Core Web Vitals (LCP, CLS) on web and mobile via deferred scripts, lazy loading and leaner imports.",
   "Migrated a legacy AngularJS tool to React.js and a PHP storefront to a Next.js monorepo, reducing technical debt.",
   "Maintain and extend the Backcountry React Native app, shipping features and fixing production bugs.",
@@ -89,7 +89,7 @@ const capabilities = [
   { icon: Sparkles, title: "AI-assisted delivery", copy: "Cursor, Copilot, Claude, ChatGPT, Lovable and v0 — faster shipping, same quality bar.", wide: "rose" },
   { icon: Smartphone, title: "React Native", copy: "Shipping and stabilizing production mobile apps." },
   { icon: Accessibility, title: "Pixel-perfect & accessible", copy: "High-fidelity mockups to responsive, WCAG-compliant UI." },
-  { icon: Users, title: "Leadership", copy: "Code review, standards and mentoring across distributed US teams." },
+  { icon: Users, title: "Team collaboration", copy: "Code review, standards and mentoring across distributed US teams." },
 ];
 
 const skills = [
@@ -99,12 +99,13 @@ const skills = [
 ];
 
 const projects = [
-  { name: "QBric AI QA Tool", url: "https://www.nisum.com/qbric", tag: "AI · Nisum", detail: "Reporting and dashboard UI for an AI test-automation platform.", tech: ["React.js", "Next.js"], tone: "blue", featured: true },
-  { name: "CodeCure AI", url: "https://codecureai.com/", tag: "Healthcare · Business site", detail: "Business website for a medical coding company, built with AI-assisted development.", tech: ["Next.js", "Lovable"], tone: "purple", featured: true },
-  { name: "Backcountry Imaging Tool", tag: "Migration", detail: "AngularJS to React.js migration, end to end.", tech: ["React.js", "Chakra UI", "Jest"], tone: "orange" },
-  { name: "HomesGlobe", url: "https://homesglobe.com/", tag: "E-commerce", detail: "Real-estate e-commerce site with an admin panel.", tech: ["React.js", "Ant Design", "Tailwind"], tone: "green" },
-  { name: "Degree37", tag: "Healthcare · Cooperative Computing", detail: "Blood-donation platform connecting donors and blood centers. Built the appointment module and owned unit and functional testing across releases.", tech: ["Appointment module", "Unit & functional testing"], tone: "red" },
-  { name: "Cloud Cost Optimization Engine", tag: "Cloud", detail: "Cloud-cost portal with reporting, filtering and pagination.", tech: ["React.js", "Node.js"], tone: "pink" },
+  { name: "QBric AI QA Tool", url: "https://www.nisum.com/qbric", tag: "Nisum · AI", detail: "AI-powered QA automation that generates test scripts directly from code. Its Shift Left approach brings testing early into the development cycle — accelerating testing, boosting coverage and cutting manual effort. I built the reporting and dashboard UI.", tech: ["React.js", "Next.js"], tone: "blue", featured: true, wide: true },
+  { name: "CodeCure AI", url: "https://codecureai.com/", tag: "Nisum · Healthcare", detail: "Business website for a medical coding company, built with AI-assisted development.", tech: ["Next.js", "Lovable"], tone: "purple", featured: true },
+  { name: "HomesGlobe", url: "https://homesglobe.com/", tag: "Nisum · E-commerce", detail: "Real-estate e-commerce site with an admin panel.", tech: ["React.js", "Ant Design", "Tailwind"], tone: "green", featured: true },
+  { name: "Backcountry Imaging Tool", tag: "Nisum · Migration", detail: "AngularJS to React.js migration, end to end.", tech: ["React.js", "Chakra UI", "Jest"], tone: "orange" },
+  { name: "Cloud Cost Optimization Engine", tag: "Nisum · Cloud", detail: "Cloud-cost portal with reporting, filtering and pagination.", tech: ["React.js", "Node.js"], tone: "pink" },
+  { name: "Dastgyr", url: "https://play.google.com/store/apps/details?id=com.dstgyr.dastgyr", tag: "Cooperative Computing · B2B Marketplace", detail: "B2B marketplace mobile app. Migrated it from Expo to bare React Native and implemented OTP autofill to improve sign-up completion.", tech: ["React Native", "OTP autofill"], tone: "teal" },
+  { name: "Degree37", tag: "Cooperative Computing · Healthcare", detail: "Blood-donation platform connecting donors and blood centers. Built the appointment module and owned unit and functional testing across releases.", tech: ["Appointment module", "Unit & functional testing"], tone: "red" },
 ];
 
 const openTo = [
@@ -202,7 +203,7 @@ export default function Home() {
         </h1>
         <p className="hero-sub intro delay-2">
           8+ years building high-performance web and mobile apps across React.js, Next.js, React Native and Node.js —
-          leading frontend architecture for brands like Williams-Sonoma, Backcountry and MotoSport.
+          building frontends for brands like Williams-Sonoma, Backcountry and MotoSport as part of distributed US teams.
         </p>
         <div className="hero-actions intro delay-3">
           <a className="btn btn-primary" href="#assistant"><Bot size={17} /> Ask my AI Assistant</a>
@@ -303,7 +304,7 @@ export default function Home() {
         </div>
         <div className="project-grid reveal stagger">
           {projects.map((project) => {
-            const className = `project-card tone-${project.tone} ${project.featured ? "featured" : ""}`;
+            const className = `project-card tone-${project.tone} ${project.featured ? "featured" : ""} ${project.wide ? "wide" : ""}`;
             const content = (
               <>
                 <div className="project-top">

@@ -22,11 +22,11 @@ const starters = [
 
 const featuredAnswers: Record<string, string> = {
   "what is fahad's strongest experience?":
-    "Fahad's strongest experience is leading frontend architecture for large US e-commerce brands — Williams-Sonoma, Backcountry and MotoSport — at Nisum. He builds reusable, accessible (WCAG) components in a micro-frontend monorepo shared across React, Next.js and Vue, improved Core Web Vitals (LCP, CLS) on web and mobile, and migrated a legacy AngularJS tool to React and a PHP storefront to a Next.js monorepo. He also maintains the Backcountry React Native app and uses AI-assisted development (Cursor, Copilot, Claude, ChatGPT) daily, including on the QBric AI QA Tool and the CodeCure AI medical coding business site.",
+    "Fahad's strongest experience is building frontends for large US e-commerce brands — Williams-Sonoma, Backcountry and MotoSport — as part of the Nisum team. He builds reusable, accessible (WCAG) components in a micro-frontend monorepo shared across React, Next.js and Vue, improved Core Web Vitals (LCP, CLS) on web and mobile, and migrated a legacy AngularJS tool to React and a PHP storefront to a Next.js monorepo. He also maintains the Backcountry React Native app and uses AI-assisted development (Cursor, Copilot, Claude, ChatGPT) daily, including on the QBric AI QA Tool and the CodeCure AI medical coding business site.",
   "is fahad open to remote roles?":
     "Yes. Fahad is open to fully remote roles worldwide, as well as on-site or hybrid roles in Pakistan. He is comfortable working across US and EU time zones and already works closely with US-based teams day to day.",
   "walk me through his career journey.":
-    "Fahad started as a React Developer at Third Venture Interactive in 2018, building web and mobile apps with React.js and React Native. He moved into mobile at Batoota / NytroTech (2019–2020), then joined Cooperative Computing, where he migrated Dastgyr from Expo to bare React Native. Since August 2021 he has been a Principal Software Engineer at Nisum, leading frontend architecture, performance and modernization work for US e-commerce and healthcare products — 8+ years in total.",
+    "Fahad started as a React Developer at Third Venture Interactive in 2018, building web and mobile apps with React.js and React Native. He moved into mobile at Batoota / NytroTech (2019–2020), then joined Cooperative Computing, where he migrated Dastgyr from Expo to bare React Native. Since August 2021 he has been a Principal Software Engineer at Nisum, building frontends and contributing to performance and modernization work for US e-commerce and healthcare products — 8+ years in total.",
 };
 
 const welcome: ChatMessage = {

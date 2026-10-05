@@ -146,11 +146,13 @@ button, textarea { font: inherit; }
 .project-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .project-card { grid-column: span 3; position: relative; overflow: hidden; border-radius: var(--radius); padding: 34px; min-height: 300px; display: flex; flex-direction: column; color: #fff; transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
 .project-card.featured { grid-column: span 3; min-height: 380px; }
+.project-card.wide { grid-column: span 6; min-height: 320px; }
 .project-card::after { content: ""; position: absolute; right: -60px; bottom: -60px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255,255,255,.14); }
 .tone-blue { background: linear-gradient(145deg, #0a84ff, #0040dd); }
 .tone-purple { background: linear-gradient(145deg, #bf5af2, #5e2bd8); }
 .tone-orange { background: linear-gradient(145deg, #ff9f0a, #ff453a); }
 .tone-green { background: linear-gradient(145deg, #30d158, #0a8a5a); }
+.tone-teal { background: linear-gradient(145deg, #40c8e0, #0071a4); }
 .tone-red { background: linear-gradient(145deg, #ff6961, #d70015); }
 .tone-pink { background: linear-gradient(145deg, #ff375f, #c41e6c); }
 .project-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -250,6 +252,7 @@ a.project-card:hover .project-visit { background: rgba(255,255,255,.35); }
   .bento-card.wide, .bento-card:last-child { grid-column: span 2; }
   .project-grid { grid-template-columns: 1fr 1fr; }
   .project-card, .project-card.featured { grid-column: span 1; }
+  .project-card.wide { grid-column: span 2; }
   .assistant-layout { grid-template-columns: 1fr; gap: 44px; }
 }
 
@@ -263,7 +266,7 @@ a.project-card:hover .project-visit { background: rgba(255,255,255,.35); }
   .stats { margin-top: 56px; }
   .section { padding: 84px 20px; }
   .role-grid, .bento, .project-grid, .open-grid { grid-template-columns: 1fr; }
-  .bento-card.wide, .bento-card:last-child { grid-column: span 1; }
+  .bento-card.wide, .bento-card:last-child, .project-card.wide { grid-column: span 1; }
   .bento-card { min-height: 0; }
   .twin-console { min-height: 560px; }
   .chat-window { height: 330px; padding-left: 14px; padding-right: 14px; }

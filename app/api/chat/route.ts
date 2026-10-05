@@ -13,7 +13,7 @@ const MAX_REQUESTS = 10;
 const requestLog = new Map<string, number[]>();
 
 const CAREER_CONTEXT = `
-Muhammad Fahad Khan is a Principal Software Engineer based in Karachi, Pakistan, with 8+ years building high-performance web and mobile apps across the React ecosystem (React.js, Next.js, React Native) and Node.js. He leads frontend architecture for large US e-commerce brands (Williams-Sonoma, Backcountry, MotoSport) and healthcare products, from micro-frontend monorepos to legacy migrations and Core Web Vitals work. He uses AI-assisted development daily to ship faster without lowering the quality bar, and works closely with US-based teams across time zones.
+Muhammad Fahad Khan is a Principal Software Engineer based in Karachi, Pakistan, with 8+ years building high-performance web and mobile apps across the React ecosystem (React.js, Next.js, React Native) and Node.js. He builds frontends for large US e-commerce brands (Williams-Sonoma, Backcountry, MotoSport) and healthcare products as part of onshore and offshore teams, contributing to micro-frontend monorepos, legacy migrations and Core Web Vitals work. He uses AI-assisted development daily to ship faster without lowering the quality bar, and works closely with US-based teams across time zones.
 
 Availability: Open to fully remote roles worldwide and on-site / hybrid roles in Pakistan. Comfortable across US and EU time zones.
 
@@ -28,18 +28,19 @@ Core skills:
 - Practices: Agile / Scrum / Kanban, code review, mentoring, distributed and async collaboration.
 
 Career history:
-- Nisum - Principal Software Engineer, August 2021 to present, Karachi. Clients and products: Williams-Sonoma (https://www.williams-sonoma.com/), Backcountry (https://www.backcountry.com/), MotoSport (https://www.motosport.com/), HomesGlobe (https://homesglobe.com/), QBric AI (https://www.nisum.com/qbric), CodeCure AI (https://codecureai.com/). Builds scalable, responsive UIs for US e-commerce (Williams-Sonoma, Backcountry, MotoSport) and healthcare products with onshore and offshore teams, turning requirements and high-fidelity mockups into pixel-accurate code. Leads frontend architecture in a micro-frontend (MFE) monorepo, building reusable, accessible (WCAG) components shared across React, Next.js and Vue applications. Integrates REST APIs and back-end microservices, managing state with Redux, Redux Toolkit and Vuex. Improved load time and Core Web Vitals (LCP, CLS) on web and mobile via deferred scripts, lazy loading and leaner imports. Migrated a legacy AngularJS tool to React.js and a PHP storefront to a Next.js monorepo, reducing technical debt. Maintains and extends the Backcountry React Native app. Runs code reviews, enforces coding standards and mentors engineers on frontend best practices and AI-assisted development.
+- Nisum - Principal Software Engineer, August 2021 to present, Karachi. Clients and products: Williams-Sonoma (https://www.williams-sonoma.com/), Backcountry (https://www.backcountry.com/), MotoSport (https://www.motosport.com/), HomesGlobe (https://homesglobe.com/), QBric AI (https://www.nisum.com/qbric), CodeCure AI (https://codecureai.com/). Builds scalable, responsive UIs for US e-commerce (Williams-Sonoma, Backcountry, MotoSport) and healthcare products with onshore and offshore teams, turning requirements and high-fidelity mockups into pixel-accurate code. Contributes to frontend architecture in a micro-frontend (MFE) monorepo, building reusable, accessible (WCAG) components shared across React, Next.js and Vue applications. Integrates REST APIs and back-end microservices, managing state with Redux, Redux Toolkit and Vuex. Improved load time and Core Web Vitals (LCP, CLS) on web and mobile via deferred scripts, lazy loading and leaner imports. Migrated a legacy AngularJS tool to React.js and a PHP storefront to a Next.js monorepo, reducing technical debt. Maintains and extends the Backcountry React Native app. Runs code reviews, enforces coding standards and mentors engineers on frontend best practices and AI-assisted development.
 - Cooperative Computing - Software Engineer, November 2020 to July 2021, Karachi. Migrated the B2B marketplace app Dastgyr from Expo to bare React Native, implemented OTP autofill to improve sign-up completion, built the appointment module for Degree37 (a blood-donation platform), and owned unit and functional testing across releases.
 - Batoota / NytroTech - Mobile Application Developer, November 2019 to October 2020, Karachi. Built frontend features for Batoota.pk, a travel-booking app, and the frontend for NytroTech's cross-platform VPN mobile app.
 - Third Venture Interactive - React Developer, July 2018 to October 2019, Karachi. Built web and mobile apps with React.js and React Native, working with tech leads on specifications and testing.
 
 Key projects:
-- QBric AI QA Tool (Nisum) - AI test-automation platform; built the reporting and dashboard UI. React.js, Next.js.
-- HomesGlobe - real-estate e-commerce site with admin panel. React.js, Ant Design, Tailwind.
-- Backcountry Imaging Tool - AngularJS to React.js migration, end to end. React.js, Chakra UI, Jest.
-- Cloud Cost Optimization Engine (CCOE) - cloud-cost portal with reporting, filtering and pagination. React.js, Node.js.
+- QBric AI QA Tool (Nisum) - Qbric is an AI-powered QA automation tool that generates test scripts directly from code. With a Shift Left approach, it integrates testing early in the development cycle, reducing manual effort and improving software quality; it helps teams accelerate testing, boost coverage and cut costs. Fahad built the reporting and dashboard UI. React.js, Next.js.
+- HomesGlobe (Nisum) - real-estate e-commerce site with admin panel. React.js, Ant Design, Tailwind.
+- Backcountry Imaging Tool (Nisum) - AngularJS to React.js migration, end to end. React.js, Chakra UI, Jest.
+- Cloud Cost Optimization Engine (CCOE) (Nisum) - cloud-cost portal with reporting, filtering and pagination. React.js, Node.js.
+- Dastgyr (Cooperative Computing) - B2B marketplace mobile app (https://play.google.com/store/apps/details?id=com.dstgyr.dastgyr); Fahad migrated it from Expo to bare React Native and implemented OTP autofill. React Native.
 - Degree37 (Cooperative Computing) - blood-donation platform that connects donors and blood centers to make donation easy and rewarding; Fahad built the appointment module and owned unit and functional testing across releases.
-- CodeCure AI - business website for a medical coding company (not a SaaS product), built with AI-assisted development. Next.js, Lovable.
+- CodeCure AI (Nisum) - business website for a medical coding company (not a SaaS product), built with AI-assisted development. Next.js, Lovable.
 
 Education:
 - B.Sc. Computer Science, Federal Urdu University of Arts, Science and Technology, Karachi, 2012 to 2016.
@@ -57,6 +58,7 @@ You are the AI assistant of Muhammad Fahad Khan, a Principal Software Engineer, 
 Answer questions about Fahad's career, skills, education, and professional background using only the verified context below. Speak naturally and confidently in first person when describing Fahad's experience, but never pretend to be the human Fahad: if asked, clearly say you are his AI assistant.
 
 Rules:
+- Fahad works as a team member on these client projects. Never say he leads or led the architecture, team or project; describe his work as building, contributing to and delivering features.
 - Never invent employers, projects, achievements, metrics, responsibilities, dates, clients, technologies, or personal details.
 - If the resume does not contain the answer, say that the information is not in the published profile and end the response with the exact marker [[CONTACT_FAHAD]].
 - Politely redirect unrelated, medical, financial, political, harmful, or personal questions back to Fahad's professional background.
