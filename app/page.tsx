@@ -99,7 +99,7 @@ const skills = [
 ];
 
 const projects = [
-  { name: " AI QA Tool", url: "https://web..mynisum.com/home", tag: "Nisum · AI", detail: "AI-powered QA automation that generates test scripts directly from code. Its Shift Left approach brings testing early into the development cycle — accelerating testing, boosting coverage and cutting manual effort. I built the reporting and dashboard UI.", tech: ["React.js", "Next.js"], tone: "blue", featured: true, wide: true },
+  { name: "QBric AI", url: "https://web.qbric.mynisum.com/home", tag: "Nisum · AI", detail: "AI-powered QA automation that generates test scripts directly from code. Its Shift Left approach brings testing early into the development cycle — accelerating testing, boosting coverage and cutting manual effort. I built the reporting and dashboard UI.", tech: ["React.js", "Next.js"], tone: "blue", featured: true, wide: true },
   { name: "CodeCure AI", url: "https://codecureai.com/", tag: "Nisum · Healthcare", detail: "Business website for a medical coding company, built with AI-assisted development.", tech: ["Next.js", "Lovable"], tone: "purple", featured: true },
   { name: "HomesGlobe", url: "https://homesglobe.com/", tag: "Nisum · E-commerce", detail: "Real-estate e-commerce site with an admin panel.", tech: ["React.js", "Ant Design", "Tailwind"], tone: "green", featured: true },
   { name: "Backcountry Imaging Tool", tag: "Nisum · Migration", detail: "AngularJS to React.js migration, end to end.", tech: ["React.js", "Chakra UI", "Jest"], tone: "orange" },
